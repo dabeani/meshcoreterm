@@ -46,7 +46,7 @@ This firmware includes companion UIs and support for several devices; notable ex
 - Seeed Studio SenseCap Indicator (TFT / D1Pro) — more details: https://www.seeedstudio.com/
 # SOON
 - Heltec V4 with Display! (v0.9.11) (WIP)
-- Elecrow with 3.5 Display! (v0.9.11) (WIP)
+- Elecrow with 3.5 Display! (v0.9.11) (WIP) -> https://www.elecrow.com/pub/wiki/CrowPanel_Advance_3.5-HMI_ESP32_AI_Display.html
 
 ## Installation
 
