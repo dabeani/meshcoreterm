@@ -2,29 +2,40 @@
 
 All notable changes to this project.
 
-## [v0.9.11] (unreleased - WIP)
+## [v0.9.11]
 
 ### Upstream base upgraded: MeshCore v1.13 → v1.14
+### Implemented device support for Heltec V4 with TFT +GPS
+### Implemented device support for Elecrow CrowPanel 3.5 TFT +SDCard
+
+### unfinished
+- MAP is still WIP!
 
 ### Added
-- Radio activity LED: a small round dot in the top status bar (left of the device name) that flashes green for 250 ms whenever any LoRa signal is received — valid packets and CRC-error receptions alike. The dot shows an idle ring outline when quiet and fills solid green on any radio activity.
+- Radio activity LED: a small round dot in the top status bar (left of the device name) that flashes green for 250 ms on LoRa RX activity (including CRC-error receptions) and flashes red for 250 ms on LoRa TX activity. The dot shows an idle ring outline when quiet.
 - Map last-known-position auto-save: when GPS gets a valid fix, coordinates are persisted to flash immediately so the map restores the true latest position after reboot. Ongoing writes are still throttled (max once every 5 minutes) and only occur when coordinates change.
 - Map contact markers now show the node 1-byte ID prefix (2-digit hex, e.g. `1E`) instead of plain squares, using the same existing marker background coloring (hop color / selected highlight) with automatic black-or-white foreground contrast for readability. (still under construction)
 
 ### Changed / Improved
-- MAP marker tap behavior: tapping a ByteID marker now keeps selection on the map and shows a left-bottom info box with `Name`, `Age`, and `Distance` (km).
+- Mgmt → WiFi now supports saved WiFi Profiles: you can create multiple named profiles, keep separate SSID/password pairs per profile, switch the active profile from a dedicated saved-profile picker, delete saved profiles directly in that picker.
+- Mgmt → Global is leaner: compile-time rows for `MAX_GROUP_CHANNELS` and `OFFLINE_QUEUE_SIZE` are gone, `MAX_CONTACTS` moved to Mgmt → Contacts as `ACT/MAX Contacts`, and the Global `Reboot` / `Update & Upgrade` actions now use the compact side-by-side button style.
+- Mgmt → Contacts now includes `Manual add contact`, using the existing edit overlay for a two-step `Public Key` then `Name` flow with clipboard paste support in both fields.
+- MAP tile cache handling is quieter and more efficient: missing SD tiles are negatively cached briefly, repeated open attempts are avoided while offline, and tiles are retried automatically once Wi-Fi connectivity returns.
+- MAP marker tap behavior: tapping a ByteID marker now keeps selection on the map and shows a left-bottom info box with `Name`, `Age`, and `Distance` (km), without a separate floating name box.
 - MAP marker double-tap behavior: double-tapping the same ByteID marker opens that contact directly in Contact Detail.
-- MAP selected-marker label text now stays at a constant size while zooming, instead of scaling with map zoom. (still under construction)
 - Mgmt → Advert → Scan Neighbor Repeaters now shows an Add button only for repeaters not yet in Contacts, and tapping a repeater row opens Contact Detail instead of adding on name/row tap.
 - Mgmt → Advert now includes `Path Hash Mode`, and Mgmt → Contacts now includes `AutoAdd Max Hops`, matching the MeshCore v1.14 companion settings on-device. (be careful other repeaters/companions need minumum MeshCore v1.14+ to avoid compatibility issues when these settings are changed)
-- Mgmt → Contacts → `AutoAdd Max Hops` now cycles the full MeshCore v1.14 range `0..64` with the correct semantics: `0 = No Limit`, `1 = Direct (0 hops)`, and `N = up to N-1 hops`. (still under construction)
+- Mgmt → Contacts → `AutoAdd Max Hops` now opens an Edit field for manual numeric entry with validation across the full MeshCore v1.14 range `0..64`: `0 = No Limit`, `1 = Direct (0 hops)`, and `N = up to N-1 hops`.
 - DM message detail now shows delivery state for sent messages (Pending / Delivered / Not delivered), including ACK-based delivered updates.
 - Mgmt → Channels now treats the built-in `Public` channel like any other joined channel, including Share/Delete actions.
 - If the default `Public` channel was deleted, Mgmt → Channels → Join now shows a `Public` button that recreates it automatically only when it is currently missing.
-- T-Deck text editor now scrolls with the cursor when moving left into long input, so the beginning of the text remains visible while editing.
+- T-Deck Text editor now scrolls with the cursor when moving left into long input, so the beginning of the text remains visible while editing.
 - Text edit overlay uses smaller message-input text with wrapped visible lines for easier long-message editing.
+- Touch text-edit overlays now use a tighter full-screen keyboard layout with larger key labels, smaller action-bar labels, and consistent title/field sizing across Wi-Fi, BLE, repeater, and other edit targets.
+- The on-screen keyboard now supports two symbol pages (`SYM1` / `SYM2`) and horizontal swipe gestures across the key area to switch symbol pages faster on touch-only devices.
 
 ### Fixed
+- Elecrow CrowPanel 3.5 SD card initialization now uses the dedicated TF SPI wiring and shared mount helper, so `/MCTerm` prefs, clipboard storage, and map tile cache writes work on the board.
 - Companion-sent messages no longer appear twice.
 - GUI-origin channel messages now populate message-detail metadata consistently (route/path hint + timestamp/RSSI baseline), so detail fields are no longer empty compared to companion-origin sends.
 - DM detail delivery status now correctly updates for zero-hop/direct sends (no false "Not delivered" when ACK was received), and sent-message hops/RSSI/repeats metadata updates more reliably.
@@ -42,6 +53,12 @@ All notable changes to this project.
 - Room-server `SVR` badges now use a distinct purple informational style instead of looking like blue action buttons.
 - Nickname colours are now applied consistently across Contacts, MAP labels/info, discovered/repeater neighbour lists, and contact detail headers so the same name keeps the same colour throughout the UI.
 - Mgmt → Contacts → `Purge w/o favs` works again; the final row is now reachable and tappable.
+- Heltec V4 TFT modern GPS bring-up now handles Quectel L76K modules correctly.
+- UI-modern companion radios with onboard GPS now keep the fast boot path while restoring full module-specific GPS init: Heltec V4 TFT preserves persistent L76K warm-start state and RTC sync, and LilyGo T-Deck Plus again applies the richer u-blox UBX runtime configuration even with GPS detect skipped.
+- Scroll gestures are now confined to the actual scrollable viewport across Msgs, DMs, contact detail, room console, repeater admin, and Mgmt pages with fixed headers or action rows, and top-edge list drag now clamps immediately so screens cannot be pulled into blank overscroll from buttons, title bars, or the first row.
+- Mgmt → Advert action buttons (Advert Direct / Advert Flood / Scan Rpts) are now rendered as three large side-by-side tiles matching the Mgmt overview style — no white border, easier to tap on touch screens.
+- Every button press across the entire GUI now shows an instant yellow ring at the touch point for 200 ms, giving clear visual confirmation that (where) the tap was registered.
+- Mgmt → GPS now includes a yellow Tracking section with flood-advert movement tracking, a persisted meter threshold, a lock-screen Tracking badge, and an orange tracking icon in the top status bar while active.
 
 ---
 
