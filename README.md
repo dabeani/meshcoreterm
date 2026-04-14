@@ -4,6 +4,17 @@ Would be nice if you support me: https://buymeacoffee.com/bmks — thank you ver
 # Firmware "MC Term"
 Finally there is a name, "MC Term", M(esh)C(ore) Term(inal). We like Retro, you like Retro, we stay retro :-).
 
+# Soon v0.9.12 will be released!
+- bugfixes!
+- save messages on SDCard if available!
+- adaptions in the GUI (mail symbol now in the Msgs Button).
+- DuryCycle can now be configured.
+- GPS tracker based on distance with advert flooding
+- new two customizeable QuickReply Buttons with dynamic variables support!
+- integrated webserver with a powerful WebBrowser UI
+- new device support -> Elecrow CrowPanel7
+and more...
+
 # MeshCore / additional GUIs for embedded mesh radios
 
 MeshCore is a lightweight hybrid routing mesh protocol for packet radios... this Repo is mainly about the companion firmware for user-friendly UIs and (actually) support for devices such as the LilyGO T-Deck Plus and Seeed Studio SenseCap Indicator-TFT AND you can connect via BLE or WiFi with the typical APPs (WebUI, iOS,...).
