@@ -4,7 +4,7 @@ Would be nice if you support me: https://buymeacoffee.com/bmks — thank you ver
 # Firmware "MC Term"
 Finally there is a name, "MC Term", M(esh)C(ore) Term(inal). We like Retro, you like Retro, we stay retro :-).
 
-# Soon v0.9.12 will be released!
+# v0.9.12 released for TDECK & HeltecV4 (no online update!)
 - bugfixes!
 - save messages on SDCard if available!
 - adaptions in the GUI (mail symbol now in the Msgs Button).
