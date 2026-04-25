@@ -63,7 +63,7 @@ This firmware includes companion UIs and support for several devices; notable ex
 
 Flash using the MeshCore web flasher:
 
-1. Open https://flasher.meshcore.co.uk/ and choose "Custom Firmware".
+1. Open https://flasher.meshcore.io/ and choose "Custom Firmware".
 2. For first-time installation (use the *-merged version), perform a full flash erase (this removes all settings). *take care*, if you upgrade the version to a newer one, use the non-merged version!
 3. Upload the built firmware image and flash to your device.
 
