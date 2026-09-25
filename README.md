@@ -2,9 +2,9 @@ Would be nice if you support me: https://buymeacoffee.com/bmks — thank you ver
 > Important: Use at your own risk. You, the device owner, are responsible for any damage, data loss, or bricked devices.
 
 # Firmware "MC Term"
-Finally there is a name, "MC Term", M(esh)C(ore) Term(inal). We like Retro, you like Retro, we stay retro :-).
+"MC Term", M(esh)C(ore) Term(inal). We like Retro, you like Retro, we stay retro :-).
 
-# v0.9.13 released for all supported devices (no online update!)
+# Soon new Firmware update v0.9.14 will arrive!
 
 # MeshCore / additional GUIs for embedded mesh radios
 
