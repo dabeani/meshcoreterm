@@ -4,7 +4,16 @@ Would be nice if you support me: https://buymeacoffee.com/bmks — thank you ver
 # Firmware "MC Term"
 "MC Term", M(esh)C(ore) Term(inal). We like Retro, you like Retro, we stay retro :-).
 
-# Soon new Firmware update v0.9.14 will arrive!
+# Soon new Firmware update v0.9.14 will arrive with new stuff!
+- Bugfixes!
+- New Mgmt / Alarm Menu for Custom alarms triggered by Channels/DMs, triggers Sound an Display Alarm!
+- New Mgmt / Sensors Menu for Customizing offsets for Sensors and other options!
+- Updated WebUI + mDNS
+- Custom MAP provider(s) with auto-save to SD-Card
+- Multiple Identities
+- auto-scope-adjustment based on reply-to-message in Channels
+- WebUI: Custom build-map-path for contacts directly on the map
+- ...
 
 # MeshCore / additional GUIs for embedded mesh radios
 
