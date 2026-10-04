@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="32 32 448 448" width="448" height="448">
+  <title>MCTerm</title>
+  <defs></defs>
+  <mask id="holel" maskUnits="userSpaceOnUse" x="0" y="0" width="512" height="512"><rect width="512" height="512" fill="#fff"/><circle cx="130" cy="160" r="12" fill="#000"/><circle cx="254" cy="272" r="12" fill="#000"/><circle cx="130" cy="384" r="12" fill="#000"/></mask><g mask="url(#holel)"><path d="M270.22,195.70 A78,78 0 0 1 328.18,247.90" fill="none" stroke="#2f6fd6" stroke-width="26" stroke-linecap="round" opacity="1.0"/>
+    <path d="M280.61,146.80 A128,128 0 0 1 375.74,232.45" fill="none" stroke="#2f6fd6" stroke-width="24" stroke-linecap="round" opacity="0.72"/>
+    <path d="M291.01,97.89 A178,178 0 0 1 423.29,216.99" fill="none" stroke="#2f6fd6" stroke-width="22" stroke-linecap="round" opacity="0.45"/>
+    <path d="M130,160 L254,272 L130,384" fill="none" stroke="#1fbf6a" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="130" cy="160" r="36" fill="#1fbf6a"/>
+    <circle cx="254" cy="272" r="36" fill="#1fbf6a"/>
+    <circle cx="130" cy="384" r="36" fill="#1fbf6a"/>
+    <rect x="284" y="366" width="120" height="36" rx="12" fill="#1fbf6a"/></g>
+</svg>
