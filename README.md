@@ -18,7 +18,7 @@
 </p>
 
 <p align="center">
-  <img src="images/device-tdeck.jpeg" height="320" alt="MC Term on a LilyGO T-Deck Plus">
+  <img src="images/device-tdeck.jpeg" height="320" alt="MC Term on a LilyGO T-Deck">
 </p>
 
 > **Important:** use at your own risk. You, the device owner, are responsible for any damage, data loss, or bricked devices.
@@ -30,7 +30,7 @@ It turns the radio into a stand-alone communicator with its own screen: chat, se
 When you want a bigger screen, open the **WebUI** in any browser, at `http://<devicename>.local`.
 It also still works with the usual MeshCore apps (Android, iOS, web) over BLE or WiFi.
 
-**Latest release: v0.9.14** (25.09.2026). See the [User Guide](https://github.com/dabeani/meshcoreterm/wiki/UserGuide) (quick start, glossary, every Mgmt page explained), the [changelog](./CHANGELOG.md) and the [releases page](https://github.com/dabeani/meshcoreterm/releases).
+**Latest release: v0.9.15**. See the [User Guide](https://github.com/dabeani/meshcoreterm/wiki/UserGuide) (quick start, glossary, every Mgmt page explained), the [changelog](./CHANGELOG.md) and the [releases page](https://github.com/dabeani/meshcoreterm/releases).
 
 > ☕ **MC Term is a free hobby project.** If it is useful to you, please consider [buying me a coffee](https://buymeacoffee.com/bmks). Thank you very much!
 
@@ -46,7 +46,7 @@ It also still works with the usual MeshCore apps (Android, iOS, web) over BLE or
 | 🌡️ **Mgmt → Sensors** *(formerly Tele)* | Live graphs for every sensor and **calibration offsets** per reading. Corrected values are also sent as telemetry. Supports the MeshCore I²C sensor set plus chip temperatures. |
 | 🔑 **Multiple identities** | Keep several node identities on the device (4 on internal storage, 8 on SD) and switch, create or copy them from the screen or the WebUI. |
 | 🌐 **WebUI improvements** | More reliable and faster sync, phone and tablet friendly layout, live GPS page, Alarm and Sensors pages, map tile source picker, firmware upload with progress, hardened login. |
-| 🏷️ **mDNS** | Reach the WebUI at `http://devicename.local` instead of an IP address. *(Not available on the T-Display P4 with the C6 AT WiFi backend.)* |
+| 🏷️ **mDNS** | Reach the WebUI at `http://devicename.local` instead of an IP address. |
 
 More: contacts, channels, DMs and room servers with delivery status, message path on the map, quick send/replies, remote repeater and room-server administration, lock screen with picture/channel/sensor background, quiet hours, dark and light theme, UI zoom, Bluetooth and WiFi (AP or Station).
 
@@ -91,7 +91,7 @@ The screenshots show the **WebUI on a phone**, reached at `http://<devicename>.l
 
 <table>
   <tr>
-    <td align="center"><img src="images/device-tdeck.jpeg" height="170"><br><sub><a href="https://lilygo.cc/en-us/products/t-deck-plus-1">LilyGO T-Deck Plus</a> / T-Deck</sub></td>
+    <td align="center"><img src="images/device-tdeck.jpeg" height="170"><br><sub><a href="https://lilygo.cc/en-us/products/t-deck-plus-1">LilyGO T-Deck</a> / T-Deck</sub></td>
     <td align="center"><img src="images/device-tdisplay-p4.jpg" height="170"><br><sub>LilyGO T-Display P4 <i>(preview)</i></sub></td>
     <td align="center"><img src="images/device-indicator.jpg" height="170"><br><sub>Seeed SenseCAP Indicator</sub></td>
   </tr>
@@ -110,7 +110,7 @@ The T-Display P4 firmware is not yet on a solid release candidate. It is shared 
 
    | File | Device |
    |------|--------|
-   | `firmware_tdeckplus_v…` | LilyGO T-Deck Plus |
+   | `firmware_tdeckplus_v…` | LilyGO T-Deck |
    | `firmware_indicatorpro_v…` | Seeed SenseCAP Indicator |
    | `firmware_elecrow35_v…` | Elecrow CrowPanel 3.5″ |
    | `firmware_elecrow7_v…` | Elecrow CrowPanel 7″ |
@@ -170,7 +170,7 @@ MeshCore focuses on a compact, reliable mesh stack. MC Term adds a polished on-d
 ## Notes &amp; reliability
 
 - Settings are stored on the device and survive reboots and updates.
-- GPS: some variants (for example T-Deck Plus) need a specific UART baud rate (38400) and a good antenna position.
+- GPS: some variants (for example T-Deck) need a specific UART baud rate (38400) and a good antenna position.
 - Looking for offline map tiles? <https://github.com/mattdrum/map-tile-downloader>
 
 ## 📜 License &amp; third-party notes
