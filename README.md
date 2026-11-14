@@ -18,7 +18,7 @@
 </p>
 
 <p align="center">
-  <img src="images/device-tdeck.jpeg" height="320" alt="MC Term on a LilyGO T-Deck">
+  <img src="images/device-wio-l2-pro.jpg" height="320" alt="MC Term on a Seeed Wio Tracker L2 Pro">
 </p>
 
 > **Important:** use at your own risk. You, the device owner, are responsible for any damage, data loss, or bricked devices.
