@@ -30,7 +30,15 @@ It turns the radio into a stand-alone communicator with its own screen: chat, se
 When you want a bigger screen, open the **WebUI** in any browser, at `http://<devicename>.local`.
 It also still works with the usual MeshCore apps (Android, iOS, web) over BLE or WiFi.
 
-**Latest release: v0.9.15**. See the [User Guide](https://github.com/dabeani/meshcoreterm/wiki/UserGuide) (quick start, glossary, every Mgmt page explained), the [changelog](./CHANGELOG.md) and the [releases page](https://github.com/dabeani/meshcoreterm/releases).
+**Latest release: v0.9.16**. See the [User Guide](https://github.com/dabeani/meshcoreterm/wiki/UserGuide) (quick start, glossary, every Mgmt page explained), the [changelog](./CHANGELOG.md) and the [releases page](https://github.com/dabeani/meshcoreterm/releases).
+
+**New in v0.9.16:**
+- **New board: Seeed Wio Tracker L2 Pro**: handheld with a 3.2″ touch screen, GPS, microSD, speaker and battery.
+- **New WebUI-only images** for the **Heltec V3** and the **Seeed XIAO ESP32S3 WIO** (used in the browser; the XIAO starts in Bluetooth, keeps 350 contacts and shows messages on the OLED of the XIAO expansion board when it is plugged in).
+- **Elecrow CrowPanel Advance 5.0″** as an untested preview.
+- **Mentions:** `@[Name]` in a message shows the coloured name; tap or click it to open that contact.
+- **The MeshCore app's command line works on MC Term:** WiFi network and password, the switch between WiFi and Bluetooth, time zone and Bluetooth PIN.
+- **SenseCAP Indicator:** the RP2040 part now updates online (install its v0.9.16 image once over USB).
 
 > ☕ **MC Term is a free hobby project.** If it is useful to you, please consider [buying me a coffee](https://buymeacoffee.com/bmks). Thank you very much!
 
@@ -100,9 +108,14 @@ The screenshots show the **WebUI on a phone**, reached at `http://<devicename>.l
     <td align="center"><img src="images/device-crowpanel-7.jpg" height="170"><br><sub><a href="https://www.elecrow.com/crowpanel-advanced-7inch-esp32-p4-hmi-ai-display-1024x600-ips-touch-screen-with-wifi-6-compatible-with-arduino-lvgl-micropython.html">Elecrow CrowPanel 7″</a></sub></td>
     <td align="center"><img src="images/device-heltec-v4.jpg" height="170"><br><sub>Heltec V4 with display</sub></td>
   </tr>
+  <tr>
+    <td align="center"><img src="images/device-wio-l2-pro.jpg" height="170"><br><sub>Seeed Wio Tracker L2 Pro <i>(new)</i></sub></td>
+    <td align="center"><sub><a href="https://www.elecrow.com/pub/wiki/CrowPanel_Advance_5.0-HMI_ESP32_AI_Display.html">Elecrow CrowPanel Advance 5.0″</a><br><i>(untested preview)</i></sub></td>
+    <td align="center"><sub><b>WebUI-only (no screen):</b><br>Heltec V3<br>Seeed XIAO ESP32S3 WIO</sub></td>
+  </tr>
 </table>
 
-The T-Display P4 firmware is not yet on a solid release candidate. It is shared so you can try the current state.
+The T-Display P4 firmware is not yet on a solid release candidate. It is shared so you can try the current state. The Elecrow CrowPanel Advance 5.0″ build (hardware V1.2 / V1.3 with the SX1262 module) was written from the vendor's schematic and examples and has not run on a real board yet. The WebUI-only images have no touch interface: you use them in the browser (Heltec V3: WiFi only; XIAO ESP32S3 WIO: starts in Bluetooth, a triple click on its button switches to WiFi and the WebUI). More boards without a screen are in preparation.
 
 ## 🚀 Installation
 
@@ -116,6 +129,10 @@ The T-Display P4 firmware is not yet on a solid release candidate. It is shared 
    | `firmware_elecrow7_v…` | Elecrow CrowPanel 7″ |
    | `firmware_heltecv4_v…` | Heltec V4 with display |
    | `firmware_tdisplayp4_v…` | LilyGO T-Display P4 |
+   | `firmware_wiotrackerl2_v…` | Seeed Wio Tracker L2 Pro |
+   | `firmware_elecrow50_v…` | Elecrow CrowPanel Advance 5.0″ (hardware V1.2 / V1.3, untested preview) |
+   | `firmware_heltecv3_v…` | Heltec V3 (WebUI-only) |
+   | `firmware_xiaos3wio_v…` | Seeed XIAO ESP32S3 WIO (WebUI-only) |
 
 2. Open <https://flasher.meshcore.io/> and choose **Custom Firmware**.
 3. **First installation:** use the `…-merged.bin` file and do a **full flash erase** (this removes all settings).
@@ -123,7 +140,9 @@ The T-Display P4 firmware is not yet on a solid release candidate. It is shared 
 4. Flash, then wait: the first boot can take 1–2 minutes and the screen may flicker. That is normal.
 5. New to MeshCore? Follow the **Quick Start** in the [User Guide](https://github.com/dabeani/meshcoreterm/wiki/UserGuide).
 
-> **SenseCAP Indicator:** it has two chips. Also install the matching `rp2040_indicator_v….uf2` from the same release (drag and drop onto the RP2040 drive). An old RP2040 image can break SD storage, map tiles, sensors and the buzzer.
+> **SenseCAP Indicator:** it has two chips. Also install the matching `rp2040_indicator_v….uf2` from the same release once over USB (drag and drop onto the RP2040 drive); from v0.9.16 on the device updates its RP2040 part online (Mgmt → Update). An old RP2040 image can break SD storage, map tiles, sensors and the buzzer.
+>
+> **Seeed XIAO ESP32S3 WIO:** install `firmware_xiaos3wio_v…-merged.bin` once with the full erase; it brings the larger storage for 350 contacts.
 >
 > **Antenna first:** never power a LoRa device without its antenna attached.
 
